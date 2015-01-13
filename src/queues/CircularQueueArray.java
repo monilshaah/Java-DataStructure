@@ -26,8 +26,10 @@ public class CircularQueueArray extends QueueArray {
 				front = 0;
 			nElem--;
 			return queueArray[front++];
+		} else {
+			System.out.println("Circular Q is empty!!!");
+			return ' ';
 		}
-		return ' ';
 	}
 	
 	public void display() {
