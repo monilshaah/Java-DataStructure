@@ -37,6 +37,8 @@ public class DEQueue {
 	public void insertRear(char elem) {
 		if (!isFull()) {
 			queueArray[++rear] = elem;
+			if (nElem == 0)
+				front = 0;
 			nElem++;
 		} else {
 			System.out.println("DEQ is full!!!");
@@ -72,8 +74,10 @@ public class DEQueue {
 	}
 	
 	public void display() {
-		for (int i=front; i <= rear; i++)
-			System.out.print(queueArray[i]);
-		System.out.println();
+		if (front != -1 || rear != -1) {
+			for (int i=front; i <= rear; i++)
+				System.out.print(queueArray[i]);
+			System.out.println();
+		}
 	}
 }
