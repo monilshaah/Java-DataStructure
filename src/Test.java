@@ -13,8 +13,5 @@ public class Test {
 		stackOps.checkDelimiter("a{b[cd)e]f}g");
 		stackOps.checkDelimiter("a{b[c(d)e]fg");
 		
-		int[] a = {1,2,3,,,};
-		System.out.println(a.length);
-		
 	}
 }
