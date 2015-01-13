@@ -15,7 +15,7 @@ public class AdvanceArrayOperation extends BasicArray {
 		}
 	}
 	
-	public BasicArray removeDups() {
+	public void removeDups() {
 		int arrayItem = this.getNumberOfItems();
 		int nElem = arrayItem;
 		long[] array = this.getLongArray();
@@ -34,6 +34,5 @@ public class AdvanceArrayOperation extends BasicArray {
 		}
 		this.setLongArray(array);
 		this.setNumberOfItems(arrayItem);
-		return this;
 	}
 }

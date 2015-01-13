@@ -197,8 +197,8 @@ public class SimpleSort {
 		System.out.println("Median value: "+array2.medianValue(array2.getLongArray(), array2.getNumberOfItems()));
 		
 		//Remove dups
-		System.out.println("Removing dups..."+array2.getNumberOfItems());
 		array2.removeDups();
+		System.out.println("Removing dups..."+array2.getNumberOfItems());
 		array2.display();
 		
 		// Odd Even Sort
