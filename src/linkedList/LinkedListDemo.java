@@ -4,11 +4,11 @@ public class LinkedListDemo {
 	public static void main(String[] args) {
 		LinkedList ll = new LinkedList();
 		
-		ll.insertFront(1);
-		ll.insertFront(2);
-		ll.insertFront(3);
-		ll.insertFront(4);
-		ll.insertFront(5);
+		ll.insertFirst(1);
+		ll.insertFirst(2);
+		ll.insertFirst(3);
+		ll.insertFirst(4);
+		ll.insertFirst(5);
 		
 		System.out.println("LinkedList:");
 		ll.displayList();

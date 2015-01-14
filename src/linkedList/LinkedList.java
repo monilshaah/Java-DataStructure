@@ -15,7 +15,7 @@ public class LinkedList {
 		return (first == null);
 	}
 	
-	public void insertFront(int linkData) {
+	public void insertFirst(int linkData) {
 		Link newLink = new Link(linkData);
 		insertFirst(newLink);
 	}
