@@ -21,6 +21,10 @@ public class Link {
 		return linkData;
 	}
 	
+	public void setLinkData(int linkData) {
+		this.linkData = linkData;
+	}
+
 	public void displayLink() {
 		System.out.println("linkData:: "+linkData);
 	}

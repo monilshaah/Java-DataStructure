@@ -13,7 +13,9 @@ public class LinkedListDemo {
 		System.out.println("LinkedList:");
 		ll.displayList();
 		
-		ll.deleteFirst();
+		
+		
+		/*ll.deleteFirst();
 		
 		System.out.println("LinkedList:");
 		ll.displayList();
@@ -38,7 +40,7 @@ public class LinkedListDemo {
 		else 
 			System.out.println("Link is not present at 3!!!");
 		
-		ll.displayList();
+		ll.displayList();*/
 
 	}
 }

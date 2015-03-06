@@ -87,4 +87,9 @@ public class LinkedList {
 		}
 		System.out.println("null");
 	}
+	
+	/*public void greaterNodeDelete() {
+		Link current = first;
+		if (current.getLinkData() < current.getNext().)
+	}*/
 }

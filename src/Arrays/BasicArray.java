@@ -4,6 +4,8 @@
  */
 package Arrays;
 
+import java.util.Arrays;
+
 public class BasicArray {
 	private int nElem;
 	private long[] longArray;

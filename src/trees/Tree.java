@@ -2,6 +2,7 @@ package trees;
 
 public class Tree {
 	private TreeNode root;
+	static int preIndex=0;
 	
 	public void insert(int nodeData) {
 		TreeNode temp = new TreeNode(nodeData);
@@ -164,6 +165,44 @@ public class Tree {
 		}
 		System.out.println("successor::"+successor.getNodeData());
 		return successor;
+	}
+	
+	public Tree mirrorTree() {
+		Tree newTree = new Tree();
+		newTree.root = _mirrorTree(this.root);
+		return newTree;
+	}
+	
+	private TreeNode _mirrorTree(TreeNode root) {
+		if (root == null)
+			return null;
+		TreeNode newRoot = new TreeNode(root.getNodeData());
+		newRoot.setRight(_mirrorTree(root.getLeft()));
+		newRoot.setLeft(_mirrorTree(root.getRight()));
+		return newRoot;
+	}
+	
+	public static Tree buildTree(int[] inOrder, int[] preOrder) {
+		Tree newTree = new Tree();
+		newTree.root = _buildTree(inOrder, preOrder, 0, inOrder.length-1);
+		return newTree;
+	}
+	
+	private static TreeNode _buildTree(int[] inOrder, int[] preOrder, int inStart, int inEnd) {
+		if (inStart > inEnd)
+			return null;
+		TreeNode newNode = new TreeNode(preOrder[preIndex++]);
+		if (inStart == inEnd)
+			return newNode;
+		int inIndex=0;
+		while(inIndex < inOrder.length) {
+			if (inOrder[inIndex] == newNode.getNodeData())
+				break;
+			inIndex++;
+		}
+		newNode.setLeft(_buildTree(inOrder, preOrder, inStart, inIndex - 1));
+		newNode.setRight(_buildTree(inOrder, preOrder, inIndex + 1, inEnd));
+		return newNode;
 	}
 }
 	
