@@ -1,4 +1,4 @@
-package Arrays;
+package arrays;
 
 public class AdvanceArrayOperation extends BasicArray {
 

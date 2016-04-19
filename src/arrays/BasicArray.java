@@ -2,9 +2,8 @@
  * @author Monil
  * Basic array operations (no duplicates)
  */
-package Arrays;
 
-import java.util.Arrays;
+package arrays;
 
 public class BasicArray {
 	private int nElem;

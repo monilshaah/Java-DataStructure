@@ -1,5 +1,7 @@
 package stacks;
 
+import java.util.Stack;
+
 public class StackOperation {
 	public String doRev(String input) {
 		StackArray stack = new StackArray(input.length());
@@ -14,24 +16,26 @@ public class StackOperation {
 	}
 	
 	public void checkDelimiter(String input) {
-		StackArray stack = new StackArray(input.length());
+//		StackArray stack = new StackArray(input.length());
+		Stack<String> stack = new Stack<String>();
 		boolean error = false;
 		char errorCh = ' ';
 		int errorPos = -1;
 		for (int i=0; i < input.length(); i++) {
-			char ch = input.charAt(i);
+			String ch = input.charAt(i)+"";
 			switch (ch) {
-				case '(': 	
-				case '{':	
-				case '[': 	stack.push(ch);
+				case "(": 	
+				case "{":	
+				case "[": 	//stack.push(ch);
+							stack.push(ch+"");
 							break;
-				case ')':
-				case '}':
-				case ']':	if (!stack.isEmpty()) {
-								char stackCh = stack.pop();
-								if ((ch == ')' && stackCh != '(') || 
-									(ch == '}' && stackCh != '{') ||
-									(ch == ']' && stackCh != '[')) {
+				case ")":
+				case "}":
+				case "]":	if (!stack.isEmpty()) {
+								String stackCh =  stack.pop();
+								if ((ch == ")" && stackCh != "(") || 
+									(ch == "}" && stackCh != "{") ||
+									(ch == "]" && stackCh != "[")) {
 									System.out.print("Error "+ch+" at ");
 									System.out.println(i+1);
 								} 
