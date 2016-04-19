@@ -16,7 +16,7 @@ public class Tree {
 		TreeNode parent = root;
 		while (current != null) {
 			parent = current;
-			if (current.getNodeData() > nodeData) {
+			if (current.getVal() > nodeData) {
 				isLeftChild = true;
 				current = current.getLeft();
 			} else {
@@ -26,20 +26,20 @@ public class Tree {
 		}
 		if (isLeftChild) {
 			parent.setLeft(temp);
-			System.out.println("Inserting "+nodeData+" left of "+parent.getNodeData());
+			System.out.println("Inserting "+nodeData+" left of "+parent.getVal());
 		}
 		else {
 			parent.setRight(temp);
-			System.out.println("Inserting "+nodeData+" right of "+parent.getNodeData());
+			System.out.println("Inserting "+nodeData+" right of "+parent.getVal());
 		}
 	}
 	
 	public TreeNode find(int key) {
 		TreeNode current = root;
 		while(current != null) {
-			if (current.getNodeData() == key)
+			if (current.getVal() == key)
 				break;
-			if (current.getNodeData() > key) {
+			if (current.getVal() > key) {
 				current = current.getLeft();
 			} else {
 				current = current.getRight();
@@ -70,14 +70,14 @@ public class Tree {
 	public void inorderTraverse(TreeNode current) {
 		if (current != null) {
 			inorderTraverse(current.getLeft());
-			System.out.print(current.getNodeData()+" ");
+			System.out.print(current.getVal()+" ");
 			inorderTraverse(current.getRight());
 		}
 	}
 	
 	public void preorderTraverse(TreeNode current) {
 		if (current != null) {
-			System.out.print(current.getNodeData()+" ");
+			System.out.print(current.getVal()+" ");
 			preorderTraverse(current.getLeft());
 			preorderTraverse(current.getRight());
 		}
@@ -87,7 +87,7 @@ public class Tree {
 		if (current != null) {
 			postorderTraverse(current.getLeft());
 			postorderTraverse(current.getRight());
-			System.out.print(current.getNodeData()+" ");
+			System.out.print(current.getVal()+" ");
 		}
 	}
 	
@@ -97,9 +97,9 @@ public class Tree {
 		
 		boolean isLeftChild = false;
 		while(delNode != null) {
-			if (delNode.getNodeData() == delKey)
+			if (delNode.getVal() == delKey)
 				break;
-			if (delNode.getNodeData() > delKey) {
+			if (delNode.getVal() > delKey) {
 				isLeftChild = true;
 				parent = delNode;
 				delNode = delNode.getLeft();
@@ -163,7 +163,7 @@ public class Tree {
 			successorParent.setLeft(successor.getRight());
 			successor.setRight(node.getRight());
 		}
-		System.out.println("successor::"+successor.getNodeData());
+		System.out.println("successor::"+successor.getVal());
 		return successor;
 	}
 	
@@ -176,7 +176,7 @@ public class Tree {
 	private TreeNode _mirrorTree(TreeNode root) {
 		if (root == null)
 			return null;
-		TreeNode newRoot = new TreeNode(root.getNodeData());
+		TreeNode newRoot = new TreeNode(root.getVal());
 		newRoot.setRight(_mirrorTree(root.getLeft()));
 		newRoot.setLeft(_mirrorTree(root.getRight()));
 		return newRoot;
@@ -196,7 +196,7 @@ public class Tree {
 			return newNode;
 		int inIndex=0;
 		while(inIndex < inOrder.length) {
-			if (inOrder[inIndex] == newNode.getNodeData())
+			if (inOrder[inIndex] == newNode.getVal())
 				break;
 			inIndex++;
 		}

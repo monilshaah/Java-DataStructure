@@ -1,20 +1,20 @@
 package trees;
 
 public class TreeNode {
-	private int nodeData;
-	private TreeNode left;
-	private TreeNode right;
+	public int val;
+	public TreeNode left;
+	public TreeNode right;
 
-	public TreeNode (int nodeData) {
-		this.nodeData = nodeData; 
+	public TreeNode (int val) {
+		this.val = val;
 	}
 	
-	public int getNodeData() {
-		return nodeData;
+	public int getVal() {
+		return val;
 	}
 	
-	public void setNodeData(int nodeData) {
-		this.nodeData = nodeData;
+	public void setVal(int val) {
+		this.val = val;
 	}
 	
 	public TreeNode getLeft() {
