@@ -3,9 +3,9 @@ public class SentenceReverse {
 	
 	public static void main(String[] args) {
 		SentenceReverse sr = new SentenceReverse();
-		String str = "monil shah";
+		String str = "monil  shah";
 		StringBuilder sb = new StringBuilder();
-		String[] wordArray = str.split(" ");
+		String[] wordArray = str.split("\\s+");
 		for (int i=0; i < wordArray.length; i++) {
 			sb.append(sr.reverse(wordArray[i]));
 			if (i != wordArray.length - 1)
